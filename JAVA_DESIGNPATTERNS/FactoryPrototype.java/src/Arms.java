@@ -8,5 +8,4 @@ abstract class Arms implements CanAttack {
 
     }
 
-    public void attack(){}
 }
