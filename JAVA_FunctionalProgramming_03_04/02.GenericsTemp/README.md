@@ -1,0 +1,1 @@
+Generare una interfaccia il cui metodo viene implementato in una classe per poi poter effettuare il casting in double su un oggetto generico per ogni oggetto istanziabile da Sensor e Thermometer.
