@@ -15,6 +15,14 @@ public class CanATriangleImp implements CanATriangle{
         this.triangleRepoImp = triangleRepoImp;
     }
 
+    public TriangleRepoImp getCanTriangle() {
+        return triangleRepoImp;
+    }
+
+    public void setCanTriangle(TriangleRepoImp triangleRepoImp) {
+        this.triangleRepoImp = triangleRepoImp;
+    };
+    
     @Override
     public void roll() {
         if(this.triangleRepoImp.getTriangle() == null)
@@ -33,11 +41,4 @@ public class CanATriangleImp implements CanATriangle{
             System.out.println("If you give it permission, yes.");
     }
 
-    public TriangleRepoImp getCanTriangle() {
-        return triangleRepoImp;
-    }
-
-    public void setCanTriangle(TriangleRepoImp triangleRepoImp) {
-        this.triangleRepoImp = triangleRepoImp;
-    };
 }

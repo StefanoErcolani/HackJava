@@ -3,7 +3,6 @@ package id.aulab;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import id.aulab.services.*;
 import id.aulab.model.*;
 import id.aulab.services.CanATriangle;
 
@@ -25,7 +24,7 @@ public class App
 
     
         CanATriangle canTriangle = context.getBean("triangleServices", CanATriangle.class);
-    
+
         canTriangle.love();
 
     }
