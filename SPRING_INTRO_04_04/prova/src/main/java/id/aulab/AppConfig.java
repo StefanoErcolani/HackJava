@@ -17,19 +17,16 @@ import id.aulab.model.Triangle;
 public class AppConfig {
     
     @Bean(name = "side1")
-    @Scope(BeanDefinition.SCOPE_SINGLETON)
         public Side1 getSide1(){
             return new Side1(7);
         }
 
     @Bean(name = "side2")
-    @Scope(BeanDefinition.SCOPE_SINGLETON)
         public Side2 getSide2(){
             return new Side2(12);
         }
 
     @Bean(name = "side3")
-    @Scope(BeanDefinition.SCOPE_SINGLETON)
         public Side3 getSide3(){
             return new Side3(7);
         }

@@ -1,9 +1,4 @@
 package id.aulab.model;
-
-import id.aulab.model.Side1;
-import id.aulab.model.Side2;
-import id.aulab.model.Side3;
-
 public class Triangle {
 
     private Side1 side1;
