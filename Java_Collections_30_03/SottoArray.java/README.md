@@ -1,0 +1,1 @@
+Scrivere una classe generica che prenda in input un array e altri due parametri interi che fungeranno da indice superiore e indice inferiore e ritorni un sottoarray nel range indice inferiore indice superiore.

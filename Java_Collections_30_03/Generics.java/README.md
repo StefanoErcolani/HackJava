@@ -1,0 +1,2 @@
+01. scrivere una classe generica che prenda in input un array e implementi dei metodi che ritornino degli elementi filtrati in base a delle caratteristiche ( numeri pari, numeri dispari, numeri primi )
+----------------------------------------------------------------------------------------
