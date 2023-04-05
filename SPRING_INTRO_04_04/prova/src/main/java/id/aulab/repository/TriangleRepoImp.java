@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import id.aulab.model.Triangle;
 
-@Component
+@Component("TriangleRepository")
 public class TriangleRepoImp implements TriangleRepository{
 
     @Autowired
@@ -13,7 +13,7 @@ public class TriangleRepoImp implements TriangleRepository{
 
     @Override
     public Triangle getTriangle(){
-        return getTriangle();
+        return this.triangle;
     };
 
     @Override

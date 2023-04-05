@@ -13,7 +13,7 @@ import id.aulab.model.Triangle;
 
 
 @Configuration
-@ComponentScan("it.aulab")
+@ComponentScan("id.aulab")
 public class AppConfig {
     
     @Bean(name = "side1")
@@ -31,7 +31,7 @@ public class AppConfig {
             return new Side3(7);
         }
 
-    @Bean(name = "triangle")
+    @Bean(name="triangle")
     @Scope(BeanDefinition.SCOPE_SINGLETON)
         public Triangle getTriangle(){
             return new Triangle(getSide1(), getSide2(), getSide3());
