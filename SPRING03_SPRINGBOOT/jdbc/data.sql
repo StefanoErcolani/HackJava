@@ -1,0 +1,2 @@
+INSERT into restaurant
+values();
