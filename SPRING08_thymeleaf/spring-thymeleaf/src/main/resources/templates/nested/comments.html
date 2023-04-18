@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="http://www.thymeleaf.org">
+<head th:insert="~{index :: defaultHead}"></head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">Comments</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-reponsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>Comment Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="comment:${comments}">
+                            <td th:text="${comment.id}"></td>
+                            <td th:text="${comment.email}"></td>
+                            <td th:text="${comment.postDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!--bootstrap script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
