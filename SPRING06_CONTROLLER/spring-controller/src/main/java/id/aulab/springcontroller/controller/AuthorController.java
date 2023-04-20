@@ -50,21 +50,22 @@ public class AuthorController {
 
     }
 
-    @PutMapping("{id}")
-    public @ResponseBody Author put(@PathVariable("id") Long id, @RequestBody Author author) throws Exception {
-        //ritorna un Optional
-        Optional<Author> dbAuth = authorRepository.findById(id);
-        if (dbAuth.isPresent()) {
+//     @PutMapping("{id}")
+//     public @ResponseBody Author put(@PathVariable("id") Long id, @RequestBody Author author) throws Exception {
+//         //ritorna un Optional
+//         Optional<Author> dbAuth = authorRepository.findById(id);
+//         if (dbAuth.isPresent()) {
 
-            Author dbAuthor = dbAuth.get();
-            dbAuthor.setFirstname(author.getFirstname());
-            dbAuthor.setLastname(author.getLastname());
-            dbAuthor.setEmail(author.getEmail());
-            authorRepository.save(dbAuthor);
+//             Author dbAuthor = dbAuth.get();
+//             dbAuthor.setFirstname(author.getFirstname());
+//             dbAuthor.setLastname(author.getLastname());
+//             dbAuthor.setEmail(author.getEmail());
+//             authorRepository.save(dbAuthor);
 
-            return dbAuthor;
-        }
-        throw new Exception();
+//             return dbAuthor;
+//         }
+//         throw new Exception();
 
-    } 
+//     } 
+
 }

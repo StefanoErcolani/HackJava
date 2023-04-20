@@ -31,7 +31,7 @@ class SpringControllerApplicationTests {
 	@Autowired
 	private CommentRepository commentRepository;
 
-	@Autowired 
+	@Autowired
 	private PostRepository postRepository;
 
 	@BeforeEach
@@ -144,7 +144,7 @@ class SpringControllerApplicationTests {
 			.first()
 			.extracting("lastname")
 			.isEqualTo("Colavezzi");
-		
+
 		assertThat(all.get(0)).extracting("lastname").isEqualTo("Colavezzi");
 
 	}
@@ -184,21 +184,48 @@ class SpringControllerApplicationTests {
 
 	@Test
 	void checkUpdateAuthorLastnameWithoutParams() {
+		List<Author> all = authorRepository.findAll();
 
-		assertThat(authorRepository.count()).isEqualTo(3);
 
-		authorRepository.updateAuthorLastNameWithoutParams();
-		
-		assertThat(authorRepository.findAll()).extracting("lastname").contains("Procida", "Minnoni", "Fanizzi");
+		System.out.println("ciao" + all.get(all.size() - 1).getId());
+
+		authorRepository.updateAuthorLastnameWithoutParams("Ciro", all.get(all.size() - 1).getId());
+
+		all = authorRepository.findAll();
+
+		for (Author a  : all) {
+
+		System.out.println("ciao" + a.getId() + " : " + a.getLastname());
+		}
+
+
+
+		assertThat(all.get(all.size() - 1)).extracting("lastname").isEqualTo("Ciro");
+
+
 	}
 
 	@Test
 	void checkDeleteCommentWithId() {
-
+		List<Comment> all = commentRepository.findAll();
+		// System.out.println(all.get(0).getId());
 		assertThat(commentRepository.count()).isEqualTo(4);
 
-		commentRepository.deleteCommentWithIdParam(2l);
+		commentRepository.deleteCommentWithIdParam(all.get(0).getId());
 
 		assertThat(commentRepository.count()).isEqualTo(3);
 	}
+
+	@Test
+	void checkUpdatePost() {
+
+		
+
+		postRepository.updatePost();
+
+		Post p = postRepository.findByPostTitle("porceddu").get(0);
+
+		System.out.println("Alo " + p.getTitle());
+	}
+
 }

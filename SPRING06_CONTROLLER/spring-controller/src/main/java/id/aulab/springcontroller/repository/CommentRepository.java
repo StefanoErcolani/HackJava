@@ -17,7 +17,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long>{
     List<Comment> findByCommentWithPostDate202020();
 
     @Modifying
-    @Query("DELETE FROM Comment c WHERE c.postDate = ':id'")
+    @Query("DELETE FROM Comment c WHERE c.id = :id")
     void deleteCommentWithIdParam(@Param("id") Long id);
 
 }

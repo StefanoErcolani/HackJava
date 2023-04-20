@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import id.aulab.springcontroller.model.Comment;
 import id.aulab.springcontroller.repository.CommentRepository;
-import jakarta.annotation.PostConstruct;
+// import jakarta.annotation.PostConstruct;
 
 @Controller
 @RequestMapping(value = "comments")

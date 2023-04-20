@@ -16,7 +16,7 @@ public class CustomAuthRepositoryImpl implements CustomAuthRepository{
 
     @Override
     public List<Author> findSomething(String ciaone) {
-    System.out.println("Aiuto");
+    // System.out.println("Aiuto");
     return entityManager
             .createQuery("SELECT a FROM Author a WHERE a.lastname LIKE :partialLastname", Author.class)
                 .setParameter("partialLastname", "%" + ciaone + "%")
