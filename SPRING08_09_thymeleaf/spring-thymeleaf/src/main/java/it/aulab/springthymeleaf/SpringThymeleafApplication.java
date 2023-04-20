@@ -1,9 +1,11 @@
 package it.aulab.springthymeleaf;
 
+import org.hibernate.dialect.Dialect;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
 
 import it.aulab.springthymeleaf.util.mapper.AuthorToAuthorDTOMapper;
 import it.aulab.springthymeleaf.util.mapper.CreateCommentDTOToCommentPropertyMapper;
@@ -15,6 +17,11 @@ public class SpringThymeleafApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringThymeleafApplication.class, args);
+	}
+
+	@Bean
+	public SpringSecurityDialect addSpringTemplaDialect() {
+		return new SpringSecurityDialect();
 	}
 
 	@Bean
