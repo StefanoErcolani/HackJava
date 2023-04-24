@@ -7,9 +7,9 @@ INSERT INTO courses (
     date
   )
 VALUES (
-    'aiuto',
-    'fatemi entrare',
-    'Domenico',
+    'corso',
+    'ma che bel corso',
+    'Luigi',
     'Pugilista',
     '2023-05-22'
   );

@@ -1,13 +1,8 @@
 package it.aulab.springprogetto.dto;
 
-import java.util.List;
+// import java.util.List;
 
-import it.aulab.springprogetto.model.Lesson;
-import it.aulab.springprogetto.model.Student;
-
-public class CourseDTO {
-    
-    private Long id;
+public class CreateCourseDTO {
 
     private String name;
 
@@ -17,24 +12,13 @@ public class CourseDTO {
 
     private String teacherLastname;
 
+    //esplicitare conversione
     private String date;
+    //probabilmente servità converter
+    // private List<Long> studentsIds;
 
-    private Integer numberOfStudents;
+    public CreateCourseDTO() {}
 
-    private List<Student> students;
-    private List<Lesson> lessons;
-
-
-    public CourseDTO() { 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -76,30 +60,12 @@ public class CourseDTO {
         this.date = date;
     }
 
-    public Integer getNumberOfStudents() {
-        return numberOfStudents;
-    }
+    // public List<Long> getStudentsIds() {
+    //     return studentsIds;
+    // }
 
-    public void setNumberOfStudents(Integer numberOfStudents) {
-        this.numberOfStudents = numberOfStudents;
-    }
-
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
-    public List<Lesson> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<Lesson> lessons) {
-        this.lessons = lessons;
-    }
-
-    
+    // public void setStudentsIds(List<Long> studentsIds) {
+    //     this.studentsIds = studentsIds;
+    // }
 
 }
