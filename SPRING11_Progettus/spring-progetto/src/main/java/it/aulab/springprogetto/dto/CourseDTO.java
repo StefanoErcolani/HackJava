@@ -22,6 +22,7 @@ public class CourseDTO {
     private Integer numberOfStudents;
 
     private List<Student> students;
+    
     private List<Lesson> lessons;
 
 

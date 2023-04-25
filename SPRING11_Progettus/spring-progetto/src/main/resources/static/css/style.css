@@ -2,3 +2,23 @@ body{
     background-color: goldenrod;
     color: red;
 }
+
+.form-control{
+    background-color: black;
+    color:aliceblue;
+}
+
+label{
+    font-weight: 600;
+    font-size: larger;
+}
+
+table{
+    border:solid;
+    border-width: 2px;
+}
+
+.form-select, .option-css{
+    background-color: black;
+    color: aliceblue;
+}

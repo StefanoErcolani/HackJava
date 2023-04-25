@@ -12,8 +12,6 @@ public class UpdateCourseDTO {
 
     private String date;
 
-    //Qua bisogna riconoscere se gli id degli studenti dovranno essere rimossi o aggiunti
-    //Nel caso serve vera logica codice, non un mapping
     private List<Student> students;
     
     private List<Long> addStudentsIds;

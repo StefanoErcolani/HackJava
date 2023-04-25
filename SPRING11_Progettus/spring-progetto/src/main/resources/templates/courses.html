@@ -2,9 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:insert="~{index :: head}"></head>
 <body>
-        
+
 <div class="containter mx-5 my-3">
-    <div class="row">
+    <div class="row my-3 justify-content-center">
+        <div class="col-12 my-3">
+            <h1 class="text-center">
+                All Courses
+            </h1>
+        </div>
+        <div class="col-3 d-flex flex-column justify-content-center  my-3">
+            <h2 class="text-center">Create a new Course</h2>
+            <a th:href="@{/courses/create}" class="btn btn-success">
+                Create
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center my-3">
         <div class="col-8">
             <table class="table table-striped">
                 <thead>

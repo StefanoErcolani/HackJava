@@ -56,12 +56,16 @@ public class RestCourseController {
         return courseService.delete(id);
     }
 
-    //Patch-> Solo campi presenti nel body
     @PutMapping("{id}")
     public CourseDTO update(@PathVariable("id") Long id, @RequestBody UpdateCourseDTO updateCourseDTO) throws Exception {
         return courseService.update(id, updateCourseDTO);
     }
 }
+
+// path = "courses/{id}", 
+//                 consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+//                 produces = { MediaType.APPLICATION_ATOM_XML_VALUE, 
+                                // MediaType.APPLICATION_JSON_VALUE}
 
 // for(String p : params.keySet()){
         //     System.out.println("Key: " + p);

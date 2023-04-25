@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+// import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import it.aulab.springprogetto.dto.CreateCourseDTO;
 import it.aulab.springprogetto.dto.UpdateCourseDTO;
 import it.aulab.springprogetto.model.Course;
 import it.aulab.springprogetto.repository.CourseRepository;
+
 
 @Service("courseService")
 public class CourseService implements CrudService<CourseDTO, CreateCourseDTO, UpdateCourseDTO, Long>{
@@ -39,27 +40,14 @@ public class CourseService implements CrudService<CourseDTO, CreateCourseDTO, Up
     @Override
     public CourseDTO readOne(Long id) throws Exception{
         
-        Optional<Course> c = courseRepository.findById(id);
-        if(c.isPresent()) {
+        return modelMapper.map(this.exists(id), CourseDTO.class);
+        // Optional<Course> c = courseRepository.findById(id);
+        // if(c.isPresent()) {
 
-            return modelMapper.map(c, CourseDTO.class);
-        }
-        throw new Exception();
+        //     return modelMapper.map(c, CourseDTO.class);
+        // }
+        // throw new Exception();
     }
-
-
-    //! query con mappa
-// #     String query = 'select ';
-
-// #     for(String key: params.keySet()){
-// #         query += key + ", "; //! name, teacher_name, teacher_surname
-// #     }
-// #     query += " from courses where ";
-
-// #     for(String key: params.keySet()){
-// #         query += key +  " = " +  params.get(key) + " AND "; //! name, teacher_name, teacher_surname
-// #     }
-
 
     @Override
     public CourseDTO create(CreateCourseDTO createCourseDTO) {
@@ -138,13 +126,7 @@ public class CourseService implements CrudService<CourseDTO, CreateCourseDTO, Up
         }
         
         return courses.stream().map((c) -> modelMapper.map(c, CourseDTO.class)).toList();        
-        // for(Course c: courses){
 
-        //     dtos.add();
-
-        // }
-
-        // return courses.stream().forEach((c) -> (dtos.add(c).map(c, Course.class))).asList();
     }
 
 

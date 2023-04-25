@@ -61,11 +61,13 @@ public class Course {
     @JoinTable(
         name = "courses_students",     
         joinColumns = @JoinColumn(
-            name = "course_id", nullable = false), 
+            name = "course_id", 
+            nullable = false), 
         inverseJoinColumns = @JoinColumn(
-            name = "student_id", nullable = false
+            name = "student_id", 
+            nullable = false
             ))
-    private List<Student> students;
+    private List<Student> students = new ArrayList<Student>();
 
     public Course() {
     }
