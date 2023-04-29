@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 import it.aulab.springprogetto.util.mapper.CourseToCourseDTO;
 import it.aulab.springprogetto.util.mapper.CreateCourseDTOToCourseDTO;
+import it.aulab.springprogetto.util.mapper.LessonToLessonDTO;
 
 
 @SpringBootApplication
@@ -23,6 +24,7 @@ public class SpringProgettoApplication {
 
 		mapper.addMappings(new CreateCourseDTOToCourseDTO());
 		mapper.addMappings(new CourseToCourseDTO());
+		mapper.addMappings(new LessonToLessonDTO());
 		
 		return mapper;
 	}

@@ -42,13 +42,11 @@
                                         Update
                                     </button>
                                 </th>
-                                <!-- <th>
-                                    <button
-                                        type="delete" class="btn btn-success deletio-button" th:data-id="${student.id}" 
-                                        th:data-course-id="${course.id}">
+                                <th>
+                                    <button class="btn btn-success deletio" type="submit" th:ref="@{/delete/${id}/${idCourse}}" th:data-id="${student.id}" th:data-course-id="${course.id}">
                                         Au Revoir
                                     </button>
-                                </th> -->
+                                </th>
                             </tr>
                         </tbody>
                     </table>
@@ -71,20 +69,25 @@
             const id = btn.getAttribute("data-id");
             const idCourse = btn.getAttribute("data-course-id");
             
-            fetch(`api/students/${id}/${idCourse}`).then();
+            fetch(`api/students/${id}/${idCourse}`).then(() => {
+                window.location.reload()
+            });
 
         })
     })
-    // const alldeletebtns = document.querySelector(".deletio-button");
-    // alldeletebtns.forEach(btn => {
-    //     btn.addEventListener("click", () => {
+    const delbtns = document.querySelectorAll(".deletio");
 
-    //         const id = btn.getAttribute("data-id");
-    //         const idCourse = btn.getAttribute("data-course-id");
+    delbtns.forEach(btn => {
+        btn.addEventListener("click", () => {
             
-    //         fetch(`api/students/{id}/{idCourse}`);
-    //     })
-    // })
+            const id = btn.getAttribute("data-id");
+            const idCourse = btn.getAttribute("data-course-id");
+
+            fetch(`api/students/${id}/${idCourse}`).
+                then( () => {
+                    window.location.reload();
+                });
+        })
+    })
 </script>
-</body>
 </html>
